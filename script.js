@@ -257,19 +257,8 @@ document.addEventListener('DOMContentLoaded', function() {
         swipeLines.forEach((line, i) => {
             line.classList.toggle('active', i === idx);
         });
-        // Arrow visibility logic
-        if (leftArrow && rightArrow) {
-            if (idx === 0) {
-                leftArrow.style.display = 'none';
-                rightArrow.style.display = '';
-            } else if (idx === featuresCardData.length - 1) {
-                leftArrow.style.display = '';
-                rightArrow.style.display = 'none';
-            } else {
-                leftArrow.style.display = '';
-                rightArrow.style.display = '';
-            }
-        }
+        leftArrow.style.display = '';
+        rightArrow.style.display = '';
     }
 
     // Touch events for mobile
@@ -328,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Arrow navigation for features carousel
     const leftArrow = document.querySelector('.features-arrow.left');
     const rightArrow = document.querySelector('.features-arrow.right');
-    if (leftArrow && rightArrow) {
+    // if (leftArrow && rightArrow) {
         leftArrow.addEventListener('click', () => {
             if (currentFeature > 0) {
                 showFeatureCard(currentFeature - 1);
@@ -343,5 +332,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 showFeatureCard(0);
             }
         });
-    }
+    //}
 });

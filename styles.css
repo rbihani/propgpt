@@ -152,33 +152,28 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 24px;
-    box-sizing: border-box;
     position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 600px;
+    padding: 0 50px;
 }
 
 .features-carousel {
     width: 100%;
-    height: 100%;
-    min-height: 500px;
-    max-width: 100%;
+    max-width: 1275px;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    position: relative;
 }
 
 .features-card {
+    max-width: 900px;
     width: 100%;
-    height: 400px;
-    min-height: 1000px;
+    margin: 0 auto;
+    height: auto;
+    min-height: 600px;
     max-height: none;
-    max-width: 1275px;
-    max-height: 1100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -187,7 +182,7 @@ body {
     margin-bottom: 24px;
     box-sizing: border-box;
     box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-    border: 5px solid transparent;
+    border: blue 5px;
     position: relative;
     flex-shrink: 0;
     transition: all 0.3s ease;
@@ -210,12 +205,12 @@ body {
 
 .features-content {
     flex: 1 1 0;
-    width: 60%;
+    width: 50%;
     min-width: 0;
-    max-width: calc(100% - 650px);
+    max-width: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: center;
 }
 
 .features-title {
@@ -232,21 +227,25 @@ body {
 }
 
 .features-visual {
-        width: 40%;
-        height: 400px;
-        display: flex;
-        justify-content: center; /* Aligns GIF to the left inside container */
-        align-items: center;
-        padding-left: 20px; 
-        transform: translateX(-100px);        /* Optional: add some spacing from the edge */
+    width: 400px;
+    height: auto;
+    min-height: 300px;
+    max-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    flex-shrink: 0;
 }
 
 .features-animation-gif {
-    width: 300px;
-    height: 400px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
-    display:flex;
-    border-radius: 8px; 
+    display: flex;
+    border-radius: 8px;
 }
 
 .features-card {
@@ -316,8 +315,9 @@ body {
 .feature-card {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 16px;
-    padding: 0 32px 0 24px;
+    padding: 0 0 0 0;
     height: 64px;
     min-width: 220px;
     background: #232323;
@@ -330,7 +330,7 @@ body {
     transition: all 0.3s cubic-bezier(.4,0,.2,1);
     outline: none;
     box-shadow: none;
-    text-align: left;
+    text-align: center;
     position: relative;
 }
 
@@ -608,22 +608,42 @@ body {
         font-size: 56px;
     }
     
+    .features-carousel-wrapper {
+        padding: 0 60px;
+    }
+    
     .features-card {
         flex-direction: column;
         text-align: center;
         gap: 40px;
+        padding: 30px;
+    }
+    
+    .features-content {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
     }
     
     .features-visual {
         width: 100%;
-        max-width: 400px;
-        height: 300px;
+        max-width: 500px;
+        padding-left: 0;
+    }
+    
+    .features-animation-gif {
+        max-width: 100%;
+        max-height: 400px;
     }
 }
 
 @media (max-width: 768px) {
     .container {
         padding: 0 20px;
+    }
+    
+    .features-carousel-wrapper {
+        padding: 0 40px;
     }
     
     .header-content {
@@ -690,6 +710,10 @@ body {
 }
 
 @media (max-width: 480px) {
+    .features-carousel-wrapper {
+        padding: 0 30px;
+    }
+    
     .hero-title {
         font-size: 34px !important; 
         font-weight: bold;
@@ -734,33 +758,36 @@ body {
         justify-content: center;
         position: relative;
         width: 100%;
-        height: 600px; /* Fixed height to prevent movement */
+        height: auto;
+        min-height: 600px;
+        padding: 0 50px;
     }
     .features-carousel {
         position: relative;
-        width: 90vw;
-        height: 600px; /* Fixed height to match wrapper */
+        width: 100%;
+        height: auto;
         display: flex;
         align-items: center;
         justify-content: center;
     }
     .features-card {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        width: 300px !important;
-        height: 700px !important;
-        min-height: 700px;
-        max-height: 700px;
-        gap: 12px;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 500px;
+        max-height: none;
+        gap: 20px;
         text-align: center;
-        opacity: 0;
+        opacity: 1;
         transition: opacity 0.3s ease;
-        pointer-events: none;
+        pointer-events: auto;
+        padding: 24px 16px;
     }
     .features-card.active {
         opacity: 1;
@@ -776,33 +803,33 @@ body {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        width: 100px;
+        width: 100%;
+        max-width: 100%;
     }
     .features-description {
         font-size: 14px;
-        width: 100px;
+        width: 100%;
         text-align: center;
     }
     .features-visual {
-        flex: 0 0 100vw !important;
-        width: 100vw !important;
+        width: 100% !important;
         height: auto !important;
         min-width: 0 !important;
-        max-width: 100vw !important;
-        max-height: 50vw !important;
+        max-width: 100% !important;
+        max-height: 300px !important;
         margin-left: 0 !important;
-        margin-top: 24px !important;
+        margin-top: 16px !important;
         border-radius: 8px !important;
         display: flex;
         align-items: center;
         justify-content: center;
-        transform: translateX(-10px);
+        padding-left: 0;
     }
     .features-animation-gif {
-        width: 90vw !important;
-        max-width: 95vw !important;
+        width: 100% !important;
+        max-width: 100% !important;
         height: auto !important;
-        max-height: 40vw !important;
+        max-height: 250px !important;
         display: block;
         border-radius: 8px;
         object-fit: contain;
